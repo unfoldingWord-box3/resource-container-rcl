@@ -1,0 +1,55 @@
+{
+    "name": "scripture-burrito-rcl",
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "React Component Library using react-jsonschema-form with the Scripture Burrito Schema",
+    "homepage": "https://scripture-burrito-rcl.netlify.app",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bible-technology/scripture-burrito-rcl"
+    },
+    "private": false,
+    "scripts": {
+        "start": "styleguidist server",
+        "build": "styleguidist build",
+        "prepublishOnly": "rm -fr ./dist & babel ./src --out-dir ./dist -s inline --extensions \".ts,.js\""
+    },
+    "dependencies": {
+        "json-schema-ref-parser": "^9.0.1",
+        "prop-types": "15.7.2",
+        "react-jsonschema-form": "^1.6.1",
+        "rjsf-material-ui": "^0.3.9"
+    },
+    "peerDependencies": {
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "7.8.4",
+        "@babel/core": "7.7.2",
+        "@babel/preset-env": "7.7.1",
+        "@babel/preset-react": "7.0.0",
+        "@babel/preset-typescript": "7.7.2",
+        "@istanbuljs/nyc-config-typescript": "0.1.3",
+        "@material-ui/core": "^4.7.0",
+        "@material-ui/icons": "^4.5.1",
+        "babel-eslint": "10.0.3",
+        "babel-jest": "24.9.0",
+        "babel-loader": "^8.0.6",
+        "babel-plugin-istanbul": "5.2.0",
+        "babel-plugin-transform-class-properties": "6.24.1",
+        "deep-freeze": "^0.0.1",
+        "gitea-react-toolkit": "^1.0.0-rc.2",
+        "markdown-translatable": "^0.12.0",
+        "path": "^0.12.7",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-styleguidist": "^11.0.5",
+        "typescript": "3.7.2",
+        "webpack": "^4.39.1"
+    },
+    "main": "dist/index.js",
+    "files": [
+        "dist/*"
+    ]
+}
