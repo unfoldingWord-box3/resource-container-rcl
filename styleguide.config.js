@@ -6,7 +6,7 @@ const { styles, theme } = require('./styleguide.styles');
 
 let sections = [
   {
-    name: 'Scripture Burrito Form',
+    name: 'Resource Container Form',
     content: 'README.md',
     sections: [
       {
@@ -23,12 +23,12 @@ let sections = [
               {
                 name: 'Form - Empty',
                 content: path.resolve(__dirname, `src/components/form`, `Form.empty.md`),
-                description: 'Empty Scripture Burrito Form'
+                description: 'Empty Form'
               },
               {
                 name: 'Form - Populated',
-                content: path.resolve(__dirname, `src/components/form`, `Form.dcs.md`),
-                description: 'Populated Scripture Burrito form by selecting metadata from DCS using Gitea React Toolkit'
+                content: path.resolve(__dirname, `src/components/form`, `Form.ult.md`),
+                description: 'Populated form with th ULT'
               }
             ]
           }

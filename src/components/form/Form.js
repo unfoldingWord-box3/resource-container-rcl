@@ -4,16 +4,7 @@ import { Theme as MuiTheme } from 'rjsf-material-ui';
 import { getSchema } from './helpers';
 
 function Form(props) {
-    const [schema, setSchema] = useState({});
-    
-    getSchema((err, schema) => {
-        if (err) {
-            console.error(err);
-        }
-        else {
-            setSchema(schema)
-        }
-    });
+    const schema = getSchema();
 
     const MuiForm = withTheme(MuiTheme);
 

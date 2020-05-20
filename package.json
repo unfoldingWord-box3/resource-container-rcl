@@ -1,12 +1,12 @@
 {
-    "name": "scripture-burrito-rcl",
+    "name": "resource-container-rcl",
     "version": "0.1.0",
     "license": "MIT",
-    "description": "React Component Library using react-jsonschema-form with the Scripture Burrito Schema",
-    "homepage": "https://scripture-burrito-rcl.netlify.app",
+    "description": "React Component Library using react-jsonschema-form with the Resource Container Schema",
+    "homepage": "https://resource-container-rcl.netlify.app",
     "repository": {
         "type": "git",
-        "url": "https://github.com/bible-technology/scripture-burrito-rcl"
+        "url": "https://github.com/unfoldingword-box3/resource-container-rcl"
     },
     "private": false,
     "scripts": {
