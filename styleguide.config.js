@@ -11,7 +11,7 @@ const pathComponents = 'src/components/';
 const sections = [
   {
     name: 'Scripture Burrito Form',
-    components: [path.join(pathComponents, 'scripture-burrito-form', 'ScriptureBurritoForm.js')]
+    components: [path.join(pathComponents, 'scripture-burrito-form', 'Form.js')]
   },
 ];
 
@@ -42,7 +42,7 @@ module.exports = {
   exampleMode: 'expand',
   pagePerSection: true,
   components: 'src/components/**/[A-Z]*.js',
-  moduleAliases: { 'scripture-burrito-react-jsonschema-form': path.resolve(__dirname, 'src') },
+  moduleAliases: { 'scripture-burrito-rcl': path.resolve(__dirname, 'src') },
   version,
   webpackConfig: {
     devtool: 'source-map',

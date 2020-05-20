@@ -1,1 +1,1 @@
-export * from './scripture-burrito-form';
+export * from './form';
