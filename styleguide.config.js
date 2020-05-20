@@ -1,54 +1,68 @@
 const path = require('path');
 const upperFirst = require('lodash/upperFirst');
 const camelCase = require('lodash/camelCase');
-const {
-  name, version, repository,
-} = require('./package.json');
+const { name, version, repository } = require('./package.json');
 const { styles, theme } = require('./styleguide.styles');
 
-const pathComponents = 'src/components/';
-
-const sections = [
+let sections = [
   {
     name: 'Scripture Burrito Form',
-    components: [path.join(pathComponents, 'scripture-burrito-form', 'Form.js')]
-  },
+    content: 'README.md',
+    sections: [
+      {
+        name: 'Components',
+        content: 'src/components/form/_readme.md',
+        components: 'src/components/form/Form.js',
+      },
+      {
+        name: 'Examples',
+        sections: [
+          {
+            name: 'Form',
+            sections: [
+              {
+                name: 'Form - Empty',
+                content: path.resolve(__dirname, `src/components/form`, `Form.empty.md`),
+                description: 'Empty Scripture Burrito Form'
+              },
+              {
+                name: 'Form - Populated',
+                content: path.resolve(__dirname, `src/components/form`, `Form.dcs.md`),
+                description: 'Populated Scripture Burrito form by selecting metadata from DCS using Gitea React Toolkit'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 module.exports = {
   title: `${upperFirst(camelCase(name))} v${version}`,
   ribbon: {
     url: repository.url,
-    text: 'View on GitHub',
+    text: 'View on GitHub'
   },
   styles,
   theme,
-  template: {
-    head: {
-      scripts: [
-        {
-          src: 'assets/js/babelHelpers.min.js'
-        }
-      ]
-    }
-  },
   getComponentPathLine: (componentPath) => {
-    const file = componentPath.split('/').pop();
-    const component = file.split('.').shift();
-    const componentName = upperFirst(camelCase(component));
+    const dirname = path.dirname(componentPath, '.js');
+    const file = dirname.split('/').slice(-1)[0];
+    const componentName = upperFirst(camelCase(file));
     return `import { ${componentName} } from "${name}";`;
   },
   usageMode: 'expand',
   exampleMode: 'expand',
   pagePerSection: true,
+  sections,
   components: 'src/components/**/[A-Z]*.js',
-  moduleAliases: { 'scripture-burrito-rcl': path.resolve(__dirname, 'src') },
+  moduleAliases: {
+    "scripture-resources-rcl": path.resolve(__dirname, "src"),
+  },
   version,
   webpackConfig: {
     devtool: 'source-map',
-    node: {
-      fs: "empty"
-    },
     module: {
       rules: [
         {
@@ -60,16 +74,8 @@ module.exports = {
           test: /\.css$/,
           loader: 'style-loader!css-loader',
         },
-        {
-          test: /\.tsx?$/,
-          use: [
-            {
-              loader: 'ts-loader',
-              options: { transpileOnly: true },
-            },
-          ],
-        },
       ],
     },
   },
 };
+
