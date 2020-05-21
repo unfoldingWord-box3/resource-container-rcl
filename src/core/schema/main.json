@@ -39,7 +39,7 @@
 					"title": "Conformsto", 
 					"type": "string",
 					"default": "",
-					"pattern": "rc0.2"
+					"pattern": "^rc0.2$"
 				},
 				"contributor": {
 					"$id": "#root/dublin_core/contributor", 
