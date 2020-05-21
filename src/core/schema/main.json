@@ -39,10 +39,7 @@
 					"title": "Conformsto", 
 					"type": "string",
 					"default": "",
-					"examples": [
-						"rc0.2"
-					],
-					"pattern": "^.*$"
+					"pattern": "rc0.2"
 				},
 				"contributor": {
 					"$id": "#root/dublin_core/contributor", 
@@ -108,7 +105,7 @@
 					"examples": [
 						"2020-03-25"
 					],
-					"pattern": "^.*$"
+					"pattern": "^\\d\\d\\d\\d-\\d\\d-\\d\\d$"
 				},
 				"language": {
 					"$id": "#root/dublin_core/language", 
@@ -128,7 +125,7 @@
 							"examples": [
 								"ltr"
 							],
-							"pattern": "^.*$"
+							"pattern": "^(ltr|rtl)$"
 						},
 						"identifier": {
 							"$id": "#root/dublin_core/language/identifier", 
@@ -151,8 +148,7 @@
 							"pattern": "^.*$"
 						}
 					}
-				}
-,
+				},
 				"modified": {
 					"$id": "#root/dublin_core/modified", 
 					"title": "Modified", 
@@ -161,7 +157,7 @@
 					"examples": [
 						"2020-03-25"
 					],
-					"pattern": "^.*$"
+					"pattern": "^\\d\\d\\d\\d-\\d\\d-\\d\\d$"
 				},
 				"publisher": {
 					"$id": "#root/dublin_core/publisher", 
@@ -289,8 +285,7 @@
 					"pattern": "^.*$"
 				}
 			}
-		}
-,
+		},
 		"checking": {
 			"$id": "#root/checking", 
 			"title": "Checking", 
@@ -327,8 +322,7 @@
 					"pattern": "^.*$"
 				}
 			}
-		}
-,
+		},
 		"projects": {
 			"$id": "#root/projects", 
 			"title": "Projects", 
