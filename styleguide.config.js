@@ -13,28 +13,22 @@ let sections = [
         name: 'Components',
         content: 'src/components/form/_readme.md',
         components: 'src/components/form/Form.js',
-      },
-      {
-        name: 'Examples',
         sections: [
           {
-            name: 'Form',
-            sections: [
-              {
-                name: 'Form - Empty',
-                content: path.resolve(__dirname, `src/components/form`, `Form.empty.md`),
-                description: 'Empty Form'
-              },
-              {
-                name: 'Form - Populated',
-                content: path.resolve(__dirname, `src/components/form`, `Form.ult.md`),
-                description: 'Populated form with th ULT'
-              }
-            ]
+            name: 'Form - Empty',
+            content: path.resolve(__dirname, `src/components/form`, `Form.md`),
+            description: 'Empty Ressource Container Form'
+          },
+          {
+            name: 'Form - DCS',
+            content: path.resolve(__dirname, `src/components/form`, `Form.dcs.md`),
+            description: 'Populated Resource Containter Form by selecting metadata from DCS using Gitea React Toolkit'
           }
-        ]
+        ],
+        sectionDepth: 2
       }
-    ]
+    ],
+    sectionDepth: 2
   }
 ];
 
