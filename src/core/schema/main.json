@@ -123,11 +123,11 @@
 							"$id": "#root/dublin_core/language/direction", 
 							"title": "Direction", 
 							"type": "string",
-							"default": "",
-							"examples": [
-								"ltr"
-							],
-							"pattern": "^(ltr|rtl)$"
+							"default": "ltr",
+							"enum": [
+								"ltr",
+								"rtl"
+							]
 						},
 						"identifier": {
 							"$id": "#root/dublin_core/language/identifier", 
@@ -329,11 +329,13 @@
 					"$id": "#root/checking/checking_level", 
 					"title": "Checking_level", 
 					"type": "string",
-					"default": "",
-					"examples": [
+					"default": "0",
+					"enum": [
+						"0",
+						"1",
+						"2",
 						"3"
-					],
-					"pattern": "^.*$"
+					]
 				}
 			}
 		},
