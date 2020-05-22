@@ -1,0 +1,56 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "unfoldingWord",
+      "Door43 World Missions Community"
+    ],
+    "creator": "unfoldingWord",
+    "description": "Unrestricted visual Bible stories–50 key stories of the Bible, from Creation to Revelation, in text, audio, and video, in any language, for free. It increases understanding of the historical and redemptive narrative of the entire Bible.",
+    "format": "text/markdown",
+    "identifier": "obs",
+    "issued": "2020-04-24",
+    "language": {
+      "direction": "ltr",
+      "identifier": "en",
+      "title": "English"
+    },
+    "modified": "2020-04-24",
+    "publisher": "unfoldingWord",
+    "relation": [
+      "en/tw",
+      "en/obs-tq",
+      "en/obs-tn",
+      "en/obs-sn",
+      "en/obs-sq"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "obs",
+        "language": "en",
+        "version": "7"
+      }
+    ],
+    "subject": "Open Bible Stories",
+    "title": "unfoldingWord® Open Bible Stories",
+    "type": "book",
+    "version": "8"
+  },
+  "checking": {
+    "checking_entity": [
+      "unfoldingWord"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "categories": [],
+      "identifier": "obs",
+      "path": "./content",
+      "sort": 0,
+      "title": "unfoldingWord® Open Bible Stories",
+      "versification": null
+    }
+  ]
+}

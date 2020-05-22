@@ -1,0 +1,399 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1590150553.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"dublin_core",
+		"checking",
+		"projects"
+	],
+	"properties": {
+		"dublin_core": {
+			"$id": "#root/dublin_core", 
+			"title": "Dublin_core", 
+			"type": "object",
+			"required": [
+				"conformsto",
+				"contributor",
+				"creator",
+				"description",
+				"format",
+				"identifier",
+				"issued",
+				"language",
+				"modified",
+				"publisher",
+				"relation",
+				"rights",
+				"source",
+				"subject",
+				"title",
+				"type",
+				"version"
+			],
+			"properties": {
+				"conformsto": {
+					"$id": "#root/dublin_core/conformsto", 
+					"title": "Conformsto", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"rc0.2"
+					],
+					"pattern": "^rc0.2$"
+				},
+				"contributor": {
+					"$id": "#root/dublin_core/contributor", 
+					"title": "Contributor", 
+					"type": "array",
+					"default": [],
+					"items":{
+						"$id": "#root/dublin_core/contributor/items", 
+						"title": "Items", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"unfoldingWord"
+						],
+						"pattern": "^.*$"
+					}
+				},
+				"creator": {
+					"$id": "#root/dublin_core/creator", 
+					"title": "Creator", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"unfoldingWord"
+					],
+					"pattern": "^.*$"
+				},
+				"description": {
+					"$id": "#root/dublin_core/description", 
+					"title": "Description", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"Unrestricted visual Bible stories–50 key stories of the Bible, from Creation to Revelation, in text, audio, and video, in any language, for free. It increases understanding of the historical and redemptive narrative of the entire Bible."
+					],
+					"pattern": "^.*$"
+				},
+				"format": {
+					"$id": "#root/dublin_core/format", 
+					"title": "Format", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"text/markdown"
+					],
+					"pattern": "^.*$"
+				},
+				"identifier": {
+					"$id": "#root/dublin_core/identifier", 
+					"title": "Identifier", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"obs"
+					],
+					"pattern": "^.*$"
+				},
+				"issued": {
+					"$id": "#root/dublin_core/issued", 
+					"title": "Issued", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"2020-04-24"
+					],
+					"pattern": "^.*$"
+				},
+				"language": {
+					"$id": "#root/dublin_core/language", 
+					"title": "Language", 
+					"type": "object",
+					"required": [
+						"direction",
+						"identifier",
+						"title"
+					],
+					"properties": {
+						"direction": {
+							"$id": "#root/dublin_core/language/direction", 
+							"title": "Direction", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"ltr"
+							],
+							"pattern": "^.*$"
+						},
+						"identifier": {
+							"$id": "#root/dublin_core/language/identifier", 
+							"title": "Identifier", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"en"
+							],
+							"pattern": "^.*$"
+						},
+						"title": {
+							"$id": "#root/dublin_core/language/title", 
+							"title": "Title", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"English"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				},
+				"modified": {
+					"$id": "#root/dublin_core/modified", 
+					"title": "Modified", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"2020-04-24"
+					],
+					"pattern": "^.*$"
+				},
+				"publisher": {
+					"$id": "#root/dublin_core/publisher", 
+					"title": "Publisher", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"unfoldingWord"
+					],
+					"pattern": "^.*$"
+				},
+				"relation": {
+					"$id": "#root/dublin_core/relation", 
+					"title": "Relation", 
+					"type": "array",
+					"default": [],
+					"items":{
+						"$id": "#root/dublin_core/relation/items", 
+						"title": "Items", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"en/tw"
+						],
+						"pattern": "^.*$"
+					}
+				},
+				"rights": {
+					"$id": "#root/dublin_core/rights", 
+					"title": "Rights", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"CC BY-SA 4.0"
+					],
+					"pattern": "^.*$"
+				},
+				"source": {
+					"$id": "#root/dublin_core/source", 
+					"title": "Source", 
+					"type": "array",
+					"default": [],
+					"items":{
+						"$id": "#root/dublin_core/source/items", 
+						"title": "Items", 
+						"type": "object",
+						"required": [
+							"identifier",
+							"language",
+							"version"
+						],
+						"properties": {
+							"identifier": {
+								"$id": "#root/dublin_core/source/items/identifier", 
+								"title": "Identifier", 
+								"type": "string",
+								"default": "",
+								"examples": [
+									"obs"
+								],
+								"pattern": "^.*$"
+							},
+							"language": {
+								"$id": "#root/dublin_core/source/items/language", 
+								"title": "Language", 
+								"type": "string",
+								"default": "",
+								"examples": [
+									"en"
+								],
+								"pattern": "^.*$"
+							},
+							"version": {
+								"$id": "#root/dublin_core/source/items/version", 
+								"title": "Version", 
+								"type": "string",
+								"default": "",
+								"examples": [
+									"7"
+								],
+								"pattern": "^.*$"
+							}
+						}
+					}
+				},
+				"subject": {
+					"$id": "#root/dublin_core/subject", 
+					"title": "Subject", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"Open Bible Stories"
+					],
+					"pattern": "^.*$"
+				},
+				"title": {
+					"$id": "#root/dublin_core/title", 
+					"title": "Title", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"unfoldingWord® Open Bible Stories"
+					],
+					"pattern": "^.*$"
+				},
+				"type": {
+					"$id": "#root/dublin_core/type", 
+					"title": "Type", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"book"
+					],
+					"pattern": "^.*$"
+				},
+				"version": {
+					"$id": "#root/dublin_core/version", 
+					"title": "Version", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"8"
+					],
+					"pattern": "^.*$"
+				}
+			}
+		},
+		"checking": {
+			"$id": "#root/checking", 
+			"title": "Checking", 
+			"type": "object",
+			"required": [
+				"checking_entity",
+				"checking_level"
+			],
+			"properties": {
+				"checking_entity": {
+					"$id": "#root/checking/checking_entity", 
+					"title": "Checking_entity", 
+					"type": "array",
+					"default": [],
+					"items":{
+						"$id": "#root/checking/checking_entity/items", 
+						"title": "Items", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"unfoldingWord"
+						],
+						"pattern": "^.*$"
+					}
+				},
+				"checking_level": {
+					"$id": "#root/checking/checking_level", 
+					"title": "Checking_level", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"3"
+					],
+					"pattern": "^.*$"
+				}
+			}
+		},
+		"projects": {
+			"$id": "#root/projects", 
+			"title": "Projects", 
+			"type": "array",
+			"default": [],
+			"items":{
+				"$id": "#root/projects/items", 
+				"title": "Items", 
+				"type": "object",
+				"required": [
+					"identifier",
+					"path",
+					"title"
+				],
+				"properties": {
+					"categories": {
+						"$id": "#root/projects/items/categories", 
+						"title": "Categories", 
+            "type": ["array", "null"],
+            "items": {"type": "string"},
+            "default": []
+					},
+					"identifier": {
+						"$id": "#root/projects/items/identifier", 
+						"title": "Identifier", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"obs"
+						],
+						"pattern": "^.*$"
+					},
+					"path": {
+						"$id": "#root/projects/items/path", 
+						"title": "Path", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"./content"
+						],
+						"pattern": "^.*$"
+					},
+					"sort": {
+						"$id": "#root/projects/items/sort", 
+						"title": "Sort", 
+						"type": "integer",
+						"examples": [
+							0
+						],
+						"default": 0
+					},
+					"title": {
+						"$id": "#root/projects/items/title", 
+						"title": "Title", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"unfoldingWord® Open Bible Stories"
+						],
+						"pattern": "^.*$"
+					},
+					"versification": {
+						"$id": "#root/projects/items/versification", 
+						"title": "Versification", 
+						"type": ["null", "string"],
+						"default": null
+					}
+				}
+			}
+		}
+	}
+}
