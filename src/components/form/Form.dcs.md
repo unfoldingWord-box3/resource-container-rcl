@@ -29,6 +29,7 @@ function Component() {
           }
           const uri = config.server + '/' + Path.join(repo.owner.username, repo.name, 'raw/branch', branch, 'manifest.yaml');
           const response = await cache.get(uri);
+          console.log(response.data);
           formData = yaml.parse(response.data);
           console.log(formData);
           setReturnValue(

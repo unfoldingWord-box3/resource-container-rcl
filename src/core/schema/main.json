@@ -36,10 +36,12 @@
 			"properties": {
 				"conformsto": {
 					"$id": "#root/dublin_core/conformsto", 
-					"title": "Conformsto", 
+					"title": "Conformsto",
 					"type": "string",
-					"default": "",
-					"pattern": "^rc0.2$"
+					"default": "rc0.2",
+					"enum": [
+						"rc0.2"
+					]		
 				},
 				"contributor": {
 					"$id": "#root/dublin_core/contributor", 
@@ -101,11 +103,11 @@
 					"$id": "#root/dublin_core/issued", 
 					"title": "Issued", 
 					"type": "string",
+					"format": "date",
 					"default": "",
 					"examples": [
 						"2020-03-25"
-					],
-					"pattern": "^\\d\\d\\d\\d-\\d\\d-\\d\\d$"
+					]
 				},
 				"language": {
 					"$id": "#root/dublin_core/language", 
@@ -153,11 +155,11 @@
 					"$id": "#root/dublin_core/modified", 
 					"title": "Modified", 
 					"type": "string",
+					"format": "date",
 					"default": "",
 					"examples": [
 						"2020-03-25"
-					],
-					"pattern": "^\\d\\d\\d\\d-\\d\\d-\\d\\d$"
+					]
 				},
 				"publisher": {
 					"$id": "#root/dublin_core/publisher", 
@@ -189,11 +191,14 @@
 					"$id": "#root/dublin_core/rights", 
 					"title": "Rights", 
 					"type": "string",
-					"default": "",
-					"examples": [
-						"CC BY-SA 4.0"
-					],
-					"pattern": "^.*$"
+					"default": "CC BY-SA 4.0",
+					"enum": [
+						"CC BY 3.0",
+						"CC BY-SA 3.0",
+						"CC BY-SA 4.0",
+						"Free Translate 2.0 International Public License",
+						"Public Domain"
+					]		
 				},
 				"source": {
 					"$id": "#root/dublin_core/source", 
@@ -248,11 +253,20 @@
 					"$id": "#root/dublin_core/subject", 
 					"title": "Subject", 
 					"type": "string",
-					"default": "",
-					"examples": [
-						"Aligned Bible"
-					],
-					"pattern": "^.*$"
+					"enum": [
+						"Aligned Bible",
+						"Bible",
+						"Greek New Testament",
+						"Hebrew Old Testament",
+						"OBS Translation Notes",
+						"OBS Translation Questions",
+						"Open Bible Stories",
+						"Translation Academy",
+						"Translation Notes",
+						"Translation Questions",
+						"Translation Words",
+						"TSV Translation Notes"
+					]
 				},
 				"title": {
 					"$id": "#root/dublin_core/title", 
@@ -334,11 +348,8 @@
 				"type": "object",
 				"required": [
 					"title",
-					"versification",
 					"identifier",
-					"sort",
-					"path",
-					"categories"
+					"path"
 				],
 				"properties": {
 					"title": {
@@ -355,7 +366,7 @@
 						"$id": "#root/projects/items/versification", 
 						"title": "Versification", 
 						"type": "string",
-						"default": "",
+						"default": null,
 						"examples": [
 							"ufw"
 						],
@@ -393,22 +404,20 @@
 					"categories": {
 						"$id": "#root/projects/items/categories", 
 						"title": "Categories", 
-						"type": "array",
+						"type": ["array", "null"],
 						"default": [],
 						"items":{
 							"$id": "#root/projects/items/categories/items", 
 							"title": "Items", 
 							"type": "string",
-							"default": "",
-							"examples": [
-								"bible-ot"
-							],
-							"pattern": "^.*$"
+							"enum": [
+								"bible-ot",
+								"bible-nt"
+							]
 						}
 					}
 				}
 			}
-
 		}
 	}
 }
