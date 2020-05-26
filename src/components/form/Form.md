@@ -3,5 +3,5 @@
 ```js
 import Form from './Form';
 
-<Form />
+<Form liveValidate={true} />
 ```
