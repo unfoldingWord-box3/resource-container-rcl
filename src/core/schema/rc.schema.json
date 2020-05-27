@@ -352,20 +352,14 @@
 					},
 					"identifier": {
 						"$id": "#root/projects/items/identifier", 
+						"$ref": "#/definitions/projectIdentifier",
 						"title": "Identifier", 
-						"type": "string",
-						"default": "",
-						"examples": [
-							"gen"
-						]
+						"default": ""
 					},
 					"sort": {
 						"$id": "#root/projects/items/sort", 
 						"title": "Sort", 
 						"type": "integer",
-						"examples": [
-							1
-						],
 						"default": 0
 					},
 					"path": {
