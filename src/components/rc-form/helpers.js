@@ -29,7 +29,7 @@ export function ErrorList(props) {
             <ul className="MuiList-root MuiList-dense MuiList-padding">
                 {errors.map(error => (
                     <li key={error.stack} className="MuiListItem-root MuiListItem-dense MuiListItem-gutters">
-                        <div class="MuiListItemIcon-root"><svg class="MuiSvgIcon-root MuiSvgIcon-colorError" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg></div>
+                        <div className="MuiListItemIcon-root"><svg className="MuiSvgIcon-root MuiSvgIcon-colorError" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg></div>
                         {error.message}
                     </li>
                 ))}

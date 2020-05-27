@@ -7,46 +7,6 @@
 	],
 	"title": "Root", 
 	"type": "object",
-	"definitions": {
-		"languageTag": {
-			"type": "string",
-			"pattern": "^(((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang))|((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+))$",
-			"minLength": 2,
-			"description": "A valid IETF language tag as specified by BCP 47."
-		},
-		"localizedText": {
-			"type": "object",
-			"additionalProperties": {
-					"$ref": "#/definitions/trimmedText"
-			},
-			"propertyNames": {
-					"$ref": "#/definitions/languageTag"
-			},
-			"minProperties": 1,
-			"description": "A textual string specified in one or multiple languages, indexed by IETF language tag."
-		},
-		"path": {
-			"type": "string",
-			"pattern": "^[^\\/:?*\"><|]+(/[^\\/:?*\"><|]+)*$",
-			"description": "A file path, delimited by forward slashes."
-		},
-		"timestamp": {
-			"type": "string",
-			"pattern": "^[12][0-9]{3}(-[01][0-9](-[0123][0-9])?)?$"
-		},
-		"trimmedText": {
-			"type": "string",
-			"pattern": "^\\S(.*\\S)?$",
-			"description": "A string without surrounding whitespace characters."
-		},
-		"url": {
-			"type": "string",
-			"pattern": "^((http(s)?|ftp)://)[^\\s$]+$",
-			"minLength": 1,
-			"description": "A valid **Uniform Resource Locator**.",
-			"examples": ["https://example.com"]
-		}
-	},
 	"required": [
 		"dublin_core",
 		"checking",
@@ -121,12 +81,9 @@
 				},
 				"format": {
 					"$id": "#root/dublin_core/format", 
+					"$ref": "#/definitions/mimeType",
 					"title": "Format", 
-					"type": "string",
-					"default": "",
-					"examples": [
-						"text/usfm3"
-					]
+					"default": ""
 				},
 				"identifier": {
 					"$id": "#root/dublin_core/identifier", 
@@ -135,11 +92,12 @@
 					"default": "",
 					"examples": [
 						"ult"
-					]
+					],
+					"pattern": "^[a-z][a-z0-9-]"
 				},
 				"issued": {
-					"$ref": "#/definitions/timestamp",
 					"$id": "#root/dublin_core/issued", 
+					"$ref": "#/definitions/timestamp",
 					"title": "Issued", 
 					"type": "string",
 					"default": "",
@@ -148,8 +106,8 @@
 					]
 				},
 				"modified": {
-					"$ref": "#/definitions/timestamp",
 					"$id": "#root/dublin_core/modified", 
+					"$ref": "#/definitions/timestamp",
 					"title": "Modified", 
 					"type": "string",
 					"default": "",
@@ -177,8 +135,8 @@
 					],
 					"properties": {
 						"identifier": {
-							"$ref": "#/definitions/languageTag",
 							"$id": "#root/dublin_core/language/identifier",
+							"$ref": "#/definitions/languageTag",
 							"title": "Identifier",
 							"examples": ["en", "hi", "es-419"]
 						},
@@ -193,7 +151,7 @@
 							"title": "Direction", 
 							"type": "string",
 							"default": "ltr",
-							"allowedValues": ["ltr", "rtl"]
+							"enum": ["ltr", "rtl"]
 						}
 					}
 				},
@@ -204,12 +162,12 @@
 					"default": [],
 					"items":{
 						"$id": "#root/dublin_core/relation/items", 
+						"$ref": "#/definitions/relationItem",
 						"title": "Items", 
-						"type": "string",
 						"default": "",
 						"examples": [
 							"en/tw"
-						]
+						]						
 					}
 				},
 				"rights": {
@@ -247,12 +205,13 @@
 								"default": "",
 								"examples": [
 									"asv"
-								]
+								],
+								"pattern": "^[a-z][a-z0-9-]"
 							},
 							"language": {
 								"$id": "#root/dublin_core/source/items/language", 
+								"$ref": "#/definitions/languageTag",
 								"title": "Language", 
-								"type": "string",
 								"default": "",
 								"examples": [
 									"en"
@@ -306,7 +265,8 @@
 					"default": "",
 					"examples": [
 						"bundle"
-					]
+					],
+					"enum": ["book", "bundle", "dict", "help", "man"]
 				},
 				"version": {
 					"$id": "#root/dublin_core/version", 
@@ -387,7 +347,8 @@
 						"default": null,
 						"examples": [
 							"ufw"
-						]
+						],
+						"enum": ["avd", "odx", "odx-hr", "other", "rsc", "ufw", "ufw-bn", "ufw-ml", "ufw-odx", "ufw-rev", "obs", "", null]
 					},
 					"identifier": {
 						"$id": "#root/projects/items/identifier", 
@@ -408,8 +369,8 @@
 						"default": 0
 					},
 					"path": {
-						"$ref": "#/definitions/path",
 						"$id": "#root/projects/items/path", 
+						"$ref": "#/definitions/path",
 						"title": "Path", 
 						"examples": [
 							"./01-GEN.usfm"
@@ -426,12 +387,141 @@
 							"type": "string",
 							"enum": [
 								"bible-ot",
-								"bible-nt"
+								"bible-nt",
+								"ta"
 							]
 						}
 					}
 				}
 			}
+		}
+	},
+	"definitions": {
+		"languageTag": {
+			"type": "string",
+			"pattern": "^(((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang))|((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+))$",
+			"minLength": 2,
+			"description": "A valid IETF language tag as specified by BCP 47."
+		},
+		"localizedText": {
+			"type": "object",
+			"additionalProperties": {
+					"$ref": "#/definitions/trimmedText"
+			},
+			"propertyNames": {
+					"$ref": "#/definitions/languageTag"
+			},
+			"minProperties": 1,
+			"description": "A textual string specified in one or multiple languages, indexed by IETF language tag."
+		},
+		"mimeType": {
+			"type": "string",
+			"pattern": "^[\\-a-z0-9]+/[\\-a-z0-9+]+$",
+			"description": "An IANA media type (also known as MIME type)"
+		},
+		"path": {
+			"type": "string",
+			"pattern": "^[^\\/:?*\"><|]+(/[^\\/:?*\"><|]+)*$",
+			"description": "A file path, delimited by forward slashes."
+		},
+		"projectIdentifier": {
+			"type": "string",
+			"enum": [
+				"gen",
+				"exo",
+				"lev",
+				"num",
+				"deu",
+				"jos",
+				"jdg",
+				"rut",
+				"1sa",
+				"2sa",
+				"1ki",
+				"2ki",
+				"1ch",
+				"2ch",
+				"ezr",
+				"neh",
+				"est",
+				"job",
+				"psa",
+				"pro",
+				"ecc",
+				"sng",
+				"isa",
+				"jer",
+				"lam",
+				"ezk",
+				"dan",
+				"hos",
+				"jol",
+				"amo",
+				"oba",
+				"jon",
+				"mic",
+				"nam",
+				"hab",
+				"zep",
+				"hag",
+				"zec",
+				"mal",
+				"mat",
+				"mrk",
+				"luk",
+				"jhn",
+				"act",
+				"rom",
+				"1co",
+				"2co",
+				"gal",
+				"eph",
+				"php",
+				"col",
+				"1th",
+				"2th",
+				"1ti",
+				"2ti",
+				"tit",
+				"phm",
+				"heb",
+				"jas",
+				"1pe",
+				"2pe",
+				"1jn",
+				"2jn",
+				"3jn",
+				"jud",
+				"rev",
+				"obs",
+				"intro",
+				"process",
+				"translate",
+				"checking",
+				"bible"
+			]
+		},
+		"relationItem": {
+			"type": "string",
+			"pattern": "^(((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang))|((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+))/[a-z][a-z0-9-]*(\\?v=[0-9][a-z0-9\\._-]+)*$",
+			"minLength": 4,
+			"description": "A relation has valid IETF language tag as specified by BCP 47 and a valid resource, separated with a slash."
+		},
+		"timestamp": {
+			"type": "string",
+			"pattern": "^[12][0-9]{3}(-[01][0-9](-[0123][0-9])?)?$"
+		},
+		"trimmedText": {
+			"type": "string",
+			"pattern": "^\\S(.*\\S)?$",
+			"description": "A string without surrounding whitespace characters."
+		},
+		"url": {
+			"type": "string",
+			"pattern": "^((http(s)?|ftp)://)[^\\s$]+$",
+			"minLength": 1,
+			"description": "A valid **Uniform Resource Locator**.",
+			"examples": ["https://example.com"]
 		}
 	}
 }

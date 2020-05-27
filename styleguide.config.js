@@ -11,18 +11,23 @@ let sections = [
     sections: [
       {
         name: 'Components',
-        content: 'src/components/form/_readme.md',
-        components: 'src/components/form/Form.js',
+        content: 'src/components/rc-form/_readme.md',
+        components: 'src/components/rc-form/RCForm.js',
         sections: [
           {
-            name: 'Form - Empty',
-            content: path.resolve(__dirname, `src/components/form`, `Form.md`),
+            name: 'RCForm - Empty',
+            content: path.resolve(__dirname, `src/components/rc-form`, `RCForm.md`),
             description: 'Empty Ressource Container Form'
           },
           {
-            name: 'Form - DCS',
-            content: path.resolve(__dirname, `src/components/form`, `Form.dcs.md`),
-            description: 'Populated Resource Containter Form by selecting metadata from DCS using Gitea React Toolkit'
+            name: 'RCForm - DCS',
+            content: path.resolve(__dirname, `src/components/rc-form`, `RCForm.dcs.md`),
+            description: 'Populated RC Form by selecting metadata from DCS using Gitea React Toolkit'
+          },
+          {
+            name: 'RCForm - ULT',
+            content: path.resolve(__dirname, `src/components/rc-form`, `RCForm.ult.md`),
+            description: 'Populated RC Form with the ULT metadata'
           }
         ],
         sectionDepth: 2

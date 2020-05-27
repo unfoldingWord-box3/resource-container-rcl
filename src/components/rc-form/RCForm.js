@@ -1,23 +1,21 @@
 import React from 'react';
-import { withTheme} from 'react-jsonschema-form';
-import { Theme as MuiTheme } from 'rjsf-material-ui';
 import { getSchema, transformErrors, ErrorList } from './helpers';
+import Form from "@rjsf/material-ui";
 
 /**
  * Component to use the RC schema in a Schema Form
  * 
- * @example ./Form.md
- * @example ./Form.dcs.md
+ * @example ./RCForm.md
+ * @example ./RCForm.dcs.md
+ * @example ./RCForm.ult.md
  * 
  * @param {*} props 
  */
-function Form(props) {
+function RCForm(props) {
     const schema = getSchema();
 
-    const MuiForm = withTheme(MuiTheme);
-
     return (
-        <MuiForm
+        <Form
             {...props}
             schema={schema}
             transformErrors={transformErrors}
@@ -26,4 +24,4 @@ function Form(props) {
     );
 }
 
-export default Form;
+export default RCForm;

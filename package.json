@@ -2,7 +2,7 @@
     "name": "resource-container-rcl",
     "version": "0.1.0",
     "license": "MIT",
-    "description": "React Component Library using react-jsonschema-form with the Resource Container Schema",
+    "description": "React Component Library using @rjsf/core with the Resource Container Schema",
     "homepage": "https://resource-container-rcl.netlify.app",
     "repository": {
         "type": "git",
@@ -15,10 +15,10 @@
         "prepublishOnly": "rm -fr ./dist & babel ./src --out-dir ./dist -s inline --extensions \".ts,.js\""
     },
     "dependencies": {
+        "@rjsf/core": "^2.0.1",
+        "@rjsf/material-ui": "^2.0.1",
         "json-schema-ref-parser": "^9.0.1",
-        "prop-types": "15.7.2",
-        "react-jsonschema-form": "^1.6.1",
-        "rjsf-material-ui": "^0.3.9"
+        "prop-types": "15.7.2"
     },
     "peerDependencies": {
         "react": "^16.13.1",
@@ -29,15 +29,12 @@
         "@babel/core": "7.7.2",
         "@babel/preset-env": "7.7.1",
         "@babel/preset-react": "7.0.0",
-        "@babel/preset-typescript": "7.7.2",
-        "@istanbuljs/nyc-config-typescript": "0.1.3",
         "@material-ui/core": "^4.7.0",
         "@material-ui/icons": "^4.5.1",
         "babel-eslint": "10.0.3",
         "babel-jest": "24.9.0",
         "babel-loader": "^8.0.6",
         "babel-plugin-istanbul": "5.2.0",
-        "babel-plugin-transform-class-properties": "6.24.1",
         "deep-freeze": "^0.0.1",
         "eslint": "^7.0.0",
         "gitea-react-toolkit": "^1.0.0-rc.2",
@@ -47,8 +44,6 @@
         "react-dom": "^16.13.1",
         "react-styleguidist": "^11.0.6",
         "source-map-support": "^0.5.19",
-        "ts-node": "^8.10.1",
-        "typescript": "3.7.2",
         "webpack": "^4.43.0",
         "yaml": "^1.10.0"
     },

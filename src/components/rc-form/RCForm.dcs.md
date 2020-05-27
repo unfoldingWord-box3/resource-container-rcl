@@ -1,4 +1,4 @@
-### Resource Container Form - Populated form with a RC repo from DCS (bg.door43.org)
+### RC Form - Populated form with a RC repo from DCS (bg.door43.org)
 
 ```js
 import React, {useContext, useState, useEffect} from 'react';
@@ -11,7 +11,7 @@ import {
   RepositoryContext,
 } from 'gitea-react-toolkit';
 import Path from 'path';
-import Form from './Form';
+import RCForm from './RCForm';
 import yaml from 'yaml';
 
 let cache = setup();
@@ -33,7 +33,7 @@ function Component() {
           formData = yaml.parse(response.data);
           console.log(formData);
           setReturnValue(
-            <Form 
+            <RCForm 
               liveValidate={true}
               formData={formData} />
           );
