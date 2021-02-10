@@ -15,7 +15,7 @@
         "prepublishOnly": "rm -fr ./dist & babel ./src --out-dir ./dist -s inline --extensions \".ts,.js\""
     },
     "dependencies": {
-        "@rjsf/core": "^2.0.1",
+        "@rjsf/core": "^2.4.2",
         "@rjsf/material-ui": "^2.0.1",
         "json-schema-ref-parser": "^9.0.1",
         "prop-types": "15.7.2"
