@@ -1,6 +1,6 @@
 {
     "name": "resource-container-rcl",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "license": "MIT",
     "description": "React Component Library using @rjsf/core with the Resource Container Schema",
     "homepage": "https://resource-container-rcl.netlify.app",
