@@ -5,7 +5,7 @@
 			"rc.schema.json#/definitions/languageTag",
 			"rc.schema.json#/definitions/localizedText"
 	],
-	"title": "Root", 
+	"title": "Root",
 	"type": "object",
 	"required": [
 		"dublin_core",
@@ -14,8 +14,8 @@
 	],
 	"properties": {
 		"dublin_core": {
-			"$id": "#root/dublin_core", 
-			"title": "Dublin_core", 
+			"$id": "#root/dublin_core",
+			"title": "Dublin_core",
 			"type": "object",
 			"required": [
 				"conformsto",
@@ -38,22 +38,22 @@
 			],
 			"properties": {
 				"conformsto": {
-					"$id": "#root/dublin_core/conformsto", 
+					"$id": "#root/dublin_core/conformsto",
 					"title": "Conformsto",
 					"type": "string",
 					"default": "rc0.2",
 					"enum": [
 						"rc0.2"
-					]		
+					]
 				},
 				"contributor": {
-					"$id": "#root/dublin_core/contributor", 
-					"title": "Contributor", 
+					"$id": "#root/dublin_core/contributor",
+					"title": "Contributor",
 					"type": "array",
 					"default": [],
 					"items":{
-						"$id": "#root/dublin_core/contributor/items", 
-						"title": "Items", 
+						"$id": "#root/dublin_core/contributor/items",
+						"title": "Items",
 						"type": "string",
 						"default": "",
 						"examples": [
@@ -62,8 +62,8 @@
 					}
 				},
 				"creator": {
-					"$id": "#root/dublin_core/creator", 
-					"title": "Creator", 
+					"$id": "#root/dublin_core/creator",
+					"title": "Creator",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -71,8 +71,8 @@
 					]
 				},
 				"description": {
-					"$id": "#root/dublin_core/description", 
-					"title": "Description", 
+					"$id": "#root/dublin_core/description",
+					"title": "Description",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -80,14 +80,14 @@
 					]
 				},
 				"format": {
-					"$id": "#root/dublin_core/format", 
+					"$id": "#root/dublin_core/format",
 					"$ref": "#/definitions/mimeType",
-					"title": "Format", 
+					"title": "Format",
 					"default": ""
 				},
 				"identifier": {
-					"$id": "#root/dublin_core/identifier", 
-					"title": "Identifier", 
+					"$id": "#root/dublin_core/identifier",
+					"title": "Identifier",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -96,9 +96,9 @@
 					"pattern": "^[a-z][a-z0-9-]"
 				},
 				"issued": {
-					"$id": "#root/dublin_core/issued", 
+					"$id": "#root/dublin_core/issued",
 					"$ref": "#/definitions/timestamp",
-					"title": "Issued", 
+					"title": "Issued",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -106,9 +106,9 @@
 					]
 				},
 				"modified": {
-					"$id": "#root/dublin_core/modified", 
+					"$id": "#root/dublin_core/modified",
 					"$ref": "#/definitions/timestamp",
-					"title": "Modified", 
+					"title": "Modified",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -116,8 +116,8 @@
 					]
 				},
 				"publisher": {
-					"$id": "#root/dublin_core/publisher", 
-					"title": "Publisher", 
+					"$id": "#root/dublin_core/publisher",
+					"title": "Publisher",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -125,8 +125,8 @@
 					]
 				},
 				"language": {
-					"$id": "#root/dublin_core/language", 
-					"title": "Language", 
+					"$id": "#root/dublin_core/language",
+					"title": "Language",
 					"type": "object",
 					"required": [
 						"direction",
@@ -141,14 +141,14 @@
 							"examples": ["en", "hi", "es-419"]
 						},
 						"title": {
-							"$id": "#root/dublin_core/language/title", 
+							"$id": "#root/dublin_core/language/title",
 							"title": "Title",
 							"type": "string",
 							"default": ""
 						},
 						"direction": {
-							"$id": "#root/dublin_core/language/direction", 
-							"title": "Direction", 
+							"$id": "#root/dublin_core/language/direction",
+							"title": "Direction",
 							"type": "string",
 							"default": "ltr",
 							"enum": ["ltr", "rtl"]
@@ -156,23 +156,23 @@
 					}
 				},
 				"relation": {
-					"$id": "#root/dublin_core/relation", 
-					"title": "Relation", 
+					"$id": "#root/dublin_core/relation",
+					"title": "Relation",
 					"type": "array",
 					"default": [],
 					"items":{
-						"$id": "#root/dublin_core/relation/items", 
+						"$id": "#root/dublin_core/relation/items",
 						"$ref": "#/definitions/relationItem",
-						"title": "Items", 
+						"title": "Items",
 						"default": "",
 						"examples": [
 							"en/tw"
-						]						
+						]
 					}
 				},
 				"rights": {
-					"$id": "#root/dublin_core/rights", 
-					"title": "Rights", 
+					"$id": "#root/dublin_core/rights",
+					"title": "Rights",
 					"type": "string",
 					"default": "CC BY-SA 4.0",
 					"enum": [
@@ -181,16 +181,16 @@
 						"CC BY-SA 4.0",
 						"Free Translate 2.0 International Public License",
 						"Public Domain"
-					]		
+					]
 				},
 				"source": {
-					"$id": "#root/dublin_core/source", 
-					"title": "Source", 
+					"$id": "#root/dublin_core/source",
+					"title": "Source",
 					"type": "array",
 					"default": [],
 					"items":{
-						"$id": "#root/dublin_core/source/items", 
-						"title": "Items", 
+						"$id": "#root/dublin_core/source/items",
+						"title": "Items",
 						"type": "object",
 						"required": [
 							"identifier",
@@ -199,8 +199,8 @@
 						],
 						"properties": {
 							"identifier": {
-								"$id": "#root/dublin_core/source/items/identifier", 
-								"title": "Identifier", 
+								"$id": "#root/dublin_core/source/items/identifier",
+								"title": "Identifier",
 								"type": "string",
 								"default": "",
 								"examples": [
@@ -209,17 +209,17 @@
 								"pattern": "^[a-z][a-z0-9-]"
 							},
 							"language": {
-								"$id": "#root/dublin_core/source/items/language", 
+								"$id": "#root/dublin_core/source/items/language",
 								"$ref": "#/definitions/languageTag",
-								"title": "Language", 
+								"title": "Language",
 								"default": "",
 								"examples": [
 									"en"
 								]
 							},
 							"version": {
-								"$id": "#root/dublin_core/source/items/version", 
-								"title": "Version", 
+								"$id": "#root/dublin_core/source/items/version",
+								"title": "Version",
 								"type": "string",
 								"default": "",
 								"examples": [
@@ -231,8 +231,8 @@
 
 				},
 				"subject": {
-					"$id": "#root/dublin_core/subject", 
-					"title": "Subject", 
+					"$id": "#root/dublin_core/subject",
+					"title": "Subject",
 					"type": "string",
 					"enum": [
 						"Aligned Bible",
@@ -246,7 +246,7 @@
 						"OBS Translation Questions",
 						"Open Bible Stories",
 						"Study Notes",
-						"Study Questions",
+ 						"Study Questions",
 						"Translation Academy",
 						"Translation Notes",
 						"Translation Questions",
@@ -258,8 +258,8 @@
 					]
 				},
 				"title": {
-					"$id": "#root/dublin_core/title", 
-					"title": "Title", 
+					"$id": "#root/dublin_core/title",
+					"title": "Title",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -267,8 +267,8 @@
 					]
 				},
 				"type": {
-					"$id": "#root/dublin_core/type", 
-					"title": "Type", 
+					"$id": "#root/dublin_core/type",
+					"title": "Type",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -277,8 +277,8 @@
 					"enum": ["book", "bundle", "dict", "help", "man"]
 				},
 				"version": {
-					"$id": "#root/dublin_core/version", 
-					"title": "Version", 
+					"$id": "#root/dublin_core/version",
+					"title": "Version",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -288,8 +288,8 @@
 			}
 		},
 		"checking": {
-			"$id": "#root/checking", 
-			"title": "Checking", 
+			"$id": "#root/checking",
+			"title": "Checking",
 			"type": "object",
 			"required": [
 				"checking_entity",
@@ -297,13 +297,13 @@
 			],
 			"properties": {
 				"checking_entity": {
-					"$id": "#root/checking/checking_entity", 
-					"title": "Checking_entity", 
+					"$id": "#root/checking/checking_entity",
+					"title": "Checking_entity",
 					"type": "array",
 					"default": [],
 					"items":{
-						"$id": "#root/checking/checking_entity/items", 
-						"title": "Items", 
+						"$id": "#root/checking/checking_entity/items",
+						"title": "Items",
 						"type": "string",
 						"default": "",
 						"examples": [
@@ -312,9 +312,9 @@
 					}
 				},
 				"checking_level": {
-					"$id": "#root/checking/checking_level", 
-					"title": "Checking_level", 
-					"type": "string",
+					"$id": "#root/checking/checking_level",
+					"title": "Checking_level",
+					"type": ["integer", "string"],
 					"default": "1",
 					"enum": [
 						"1",
@@ -325,13 +325,13 @@
 			}
 		},
 		"projects": {
-			"$id": "#root/projects", 
-			"title": "Projects", 
+			"$id": "#root/projects",
+			"title": "Projects",
 			"type": "array",
 			"default": [],
 			"items":{
-				"$id": "#root/projects/items", 
-				"title": "Items", 
+				"$id": "#root/projects/items",
+				"title": "Items",
 				"type": "object",
 				"required": [
 					"title",
@@ -340,8 +340,8 @@
 				],
 				"properties": {
 					"title": {
-						"$id": "#root/projects/items/title", 
-						"title": "Title", 
+						"$id": "#root/projects/items/title",
+						"title": "Title",
 						"type": "string",
 						"default": "",
 						"examples": [
@@ -349,9 +349,9 @@
 						]
 					},
 					"versification": {
-						"$id": "#root/projects/items/versification", 
-						"title": "Versification", 
-						"type": "string",
+						"$id": "#root/projects/items/versification",
+						"title": "Versification",
+						"type": ["string", "null"],
 						"default": null,
 						"examples": [
 							"ufw"
@@ -359,33 +359,33 @@
 						"enum": ["avd", "odx", "odx-hr", "other", "rsc", "ufw", "ufw-bn", "ufw-ml", "ufw-odx", "ufw-rev", "obs", "", null]
 					},
 					"identifier": {
-						"$id": "#root/projects/items/identifier", 
+						"$id": "#root/projects/items/identifier",
 						"$ref": "#/definitions/projectIdentifier",
-						"title": "Identifier", 
+						"title": "Identifier",
 						"default": ""
 					},
 					"sort": {
-						"$id": "#root/projects/items/sort", 
-						"title": "Sort", 
+						"$id": "#root/projects/items/sort",
+						"title": "Sort",
 						"type": "integer",
 						"default": 0
 					},
 					"path": {
-						"$id": "#root/projects/items/path", 
+						"$id": "#root/projects/items/path",
 						"$ref": "#/definitions/path",
-						"title": "Path", 
+						"title": "Path",
 						"examples": [
 							"./01-GEN.usfm"
 						]
 					},
 					"categories": {
-						"$id": "#root/projects/items/categories", 
-						"title": "Categories", 
+						"$id": "#root/projects/items/categories",
+						"title": "Categories",
 						"type": ["array", "null"],
 						"default": [],
 						"items":{
-							"$id": "#root/projects/items/categories/items", 
-							"title": "Items", 
+							"$id": "#root/projects/items/categories/items",
+							"title": "Items",
 							"type": "string",
 							"enum": [
 								"bible-ot",
@@ -505,7 +505,7 @@
 		},
 		"relationItem": {
 			"type": "string",
-			"pattern": "^(((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang))|((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+))/[a-z][a-z0-9-]*(\\?v=[0-9][a-z0-9\\._-]+)*$",
+			"pattern": "^(((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang))|((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+))/[a-z][a-z0-9-]*(\\?v=[0-9][a-z0-9\\._-]*)*$",
 			"minLength": 4,
 			"description": "A relation has valid IETF language tag as specified by BCP 47 and a valid resource, separated with a slash."
 		},
